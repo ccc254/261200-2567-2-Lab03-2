@@ -8,14 +8,13 @@ public class Patient{
     private String phoneNumber;
     private int currentYear;
 
-
     public Patient(int id, String name, int birthYear, double height, double weight,
                    String bloodGroup, String phoneNumber){
         this.id = id;
         this.name = name;
         this.birthYear = birthYear;
-        this.height = height;
-        this.weight = weight;
+        this.height = Math.abs(height);
+        this.weight = Math.abs(weight);
         this.bloodGroup = bloodGroup;
         this.phoneNumber = phoneNumber;
     }
@@ -52,19 +51,17 @@ public class Patient{
             return 0.0; // Return 0 or throw an exception for invalid height
         }
     }
-
+//Math.abs(height)
     public void displayDetails(int currentYear) {
         System.out.println("Patient Name: " + name);
         System.out.println("Patient Age: " + getAge(currentYear));
-        System.out.println("Patient Height (cm): " + Math.abs(height));
-        System.out.println("Patient Weight (kg): " + Math.abs(weight));
+        System.out.println("Patient Height (cm): " + height);
+        System.out.println("Patient Weight (kg): " + weight);
         System.out.println("Patient BloodGroup: " + bloodGroup);
         System.out.println("Patient PhoneNumber): " + phoneNumber);
         System.out.println("Patient BMI: " + String.format("%.1f", getBMI()));
 
     }
-
-
 
     public static void main(String[] args) {
         int currentYear = 2024;
