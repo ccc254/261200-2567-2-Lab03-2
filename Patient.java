@@ -13,8 +13,8 @@ public class Patient{
         this.id = id;
         this.name = name;
         this.birthYear = birthYear;
-        this.height = Math.abs(height);
-        this.weight = Math.abs(weight);
+        this.height = height;
+        this.weight = weight;
         this.bloodGroup = bloodGroup;
         this.phoneNumber = phoneNumber;
     }
@@ -55,8 +55,8 @@ public class Patient{
     public void displayDetails(int currentYear) {
         System.out.println("Patient Name: " + name);
         System.out.println("Patient Age: " + getAge(currentYear));
-        System.out.println("Patient Height (cm): " + height);
-        System.out.println("Patient Weight (kg): " + weight);
+        System.out.println("Patient Height (cm): " + (height > 0 ? height : "Invalid"));
+        System.out.println("Patient Weight (kg): " + (weight > 0 ? weight : "Invalid"));
         System.out.println("Patient BloodGroup: " + bloodGroup);
         System.out.println("Patient PhoneNumber): " + phoneNumber);
         System.out.println("Patient BMI: " + String.format("%.1f", getBMI()));
