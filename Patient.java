@@ -55,8 +55,11 @@ public class Patient{
     public void displayDetails(int currentYear) {
         System.out.println("Patient Name: " + name);
         System.out.println("Patient Age: " + getAge(currentYear));
-        System.out.println("Patient Height (cm): " + (height > 0 ? height : "Invalid"));
-        System.out.println("Patient Weight (kg): " + (weight > 0 ? weight : "Invalid"));
+        if (height > 0) System.out.println("Patient Height (cm): " + height);
+        else  System.out.println("Patient Height (cm): Invalid");
+        if (weight > 0) System.out.println("Patient Weight (kg): " + weight);
+        else System.out.println("Patient Weight (cm): Invalid");
+        //System.out.println("Patient Weight (kg): " + (weight > 0 ? weight : "Invalid"));
         System.out.println("Patient BloodGroup: " + bloodGroup);
         System.out.println("Patient PhoneNumber): " + phoneNumber);
         System.out.println("Patient BMI: " + String.format("%.1f", getBMI()));
